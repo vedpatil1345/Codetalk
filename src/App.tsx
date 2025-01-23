@@ -12,6 +12,7 @@ import { TranslatePage } from "@/components/pages/TranslatePage";
 import { CodeWithAi } from "@/components/pages/CodeWithAi";
 import { HelpPage } from "@/components/pages/HelpPage";
 import { ContactPage } from "@/components/pages/ContactPage";
+import { NotFoundPage } from "@/components/pages/NotFoundPage";
 import 'regenerator-runtime/runtime';
 
 function App() {
@@ -21,6 +22,7 @@ function App() {
         {/* Home Route */}
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
+          <Route path="*" element={<NotFoundPage />} />
           <Route path="auth" element={<AuthPage />} />
           <Route path="help" element={<HelpPage/>} />
           <Route path="contact" element={<ContactPage/>} />

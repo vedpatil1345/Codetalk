@@ -7,17 +7,17 @@ export const ProtectedRoute: React.FC<{ children: React.ReactNode }> = ({ childr
    const navigate = useNavigate();
    const location = useLocation();
    const isAuthPage = location.pathname.startsWith('/auth');
-   const isHomePage = location.pathname === '/';
+   const isPlaygroundPage = location.pathname.startsWith('/playground');
 
    React.useEffect(() => {
-       if (!user && !isAuthPage && !isHomePage) {
+       if (!user && !isAuthPage && isPlaygroundPage) {
            navigate('/auth', { 
                state: { from: location.pathname }
            });
        }
-   }, [user, navigate, location.pathname, isAuthPage, isHomePage]);
+   }, [user, navigate, location.pathname, isAuthPage, isPlaygroundPage]);
 
-   if (!user && !isAuthPage && !isHomePage) {
+   if (!user && !isAuthPage && isPlaygroundPage) {
        return null;
    }
 
