@@ -60,11 +60,11 @@ const ContactPage: React.FC = () => {
   };
 
   return (
-    <div className="max-h-[85vh] bg-transparent flex items-center justify-center">
+    <div className="max-h-[85vh] bg-transparent flex items-center justify-center mb-8">
       <Card className="max-w-2xl w-full bg-transparent border-none">
         <CardHeader className="text-center">
-          <div className="flex justify-center mb-4">
-            <Mail className="h-12 w-12 text-blue-500" />
+          <div className="flex justify-center">
+            <Mail className="h-10 w-10 text-blue-500" />
           </div>
           <CardTitle className="text-3xl font-bold text-blue-500">
             Contact Us
@@ -90,7 +90,7 @@ const ContactPage: React.FC = () => {
               </Alert>
             )}
 
-            <form onSubmit={handleSubmit} className="space-y-6">
+            <form onSubmit={handleSubmit} className="space-y-4">
               <div>
                 <label className="dark:text-gray-300 text-sm font-medium block mb-2">
                   Name

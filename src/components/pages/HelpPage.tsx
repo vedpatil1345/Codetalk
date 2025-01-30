@@ -44,7 +44,7 @@ export const HelpPage = () => {
   ];
 
   return (
-    <div className="container mx-auto my-auto px-4 max-w-full min-h-[85vh] overflow-auto ">
+    <div className="container mx-auto my-auto px-4 py-4 max-w-full min-h-[85vh] overflow-auto ">
       <div className="space-y-8">
         {/* Hero Section */}
         <div className="text-center">

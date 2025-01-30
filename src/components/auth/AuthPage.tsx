@@ -28,6 +28,12 @@ const AuthPage: React.FC = () => {
       navigate('/');
     }
   }, [user, navigate]);
+  React.useEffect(() => {
+    const params = new URLSearchParams(window.location.search);
+    if (params.get('signup') === 'true') {
+      setIsLogin(false);
+    }
+  }, []);
   
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
     const { name, value } = e.target;
@@ -65,8 +71,8 @@ const AuthPage: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-transparent flex justify-center p-4">
-      <div className="max-w-md w-full space-y-5 my-[5%]">
+    <div className="bg-transparent flex justify-center p-4">
+      <div className="max-w-md w-full space-y-5">
         {/* Logo and Title */}
         <div className="text-center">
           <div className="flex justify-center">

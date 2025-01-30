@@ -68,13 +68,13 @@ const NavBar = memo(() => {
 
   return (
     <nav
-      className="fixed w-full top-0 left-0 right-0 z-50 bg-white dark:bg-slate-900 p-4 backdrop-blur-md shadow-sm"
+      className="fixed w-full top-0 left-0 right-0 z-50 bg-white dark:bg-slate-900 p-4 backdrop-blur-md shadow-sm font-mono"
       aria-label="Main Navigation"
     >
       <div className="mx-auto px-4">
         <div className="flex items-center justify-between">
           {/* Logo */}
-          <div className="flex items-center">
+          <div className="pl-[3vw] flex items-center">
             <NavLink
               to="/"
               className="text-2xl font-bold bg-clip-text text-transparent transition-colors duration-300
@@ -88,7 +88,7 @@ const NavBar = memo(() => {
           </div>
 
           {/* Main Navigation */}
-          <div className="hidden md:flex md:items-center sm:space-x-8">
+          <div className="hidden ml-[-3vw] md:flex md:items-center sm:space-x-8">
             <NavLink
               to="/"
               className={({ isActive }) =>
@@ -159,16 +159,26 @@ const NavBar = memo(() => {
             >
               Contact Us
             </NavLink>
+            </div>
+            <div className="hidden md:flex md:items-center sm:space-x-4">
             <ThemeToggle />
             {user ? (
               <UserMenu email={user.email || ''} />
-            ) : (
+            ) : location.pathname==='/auth' ?<></>:(<>
               <Button
-                className="bg-blue-500 hover:bg-blue-600 text-white"
-                onClick={() => navigate('/auth')}
-              >
-                Login
-              </Button>
+        variant="outline"
+        className="bg-white hover:bg-gray-100 text-blue-500 border-blue-500"
+        onClick={() => navigate('/auth')}
+      >
+        Login
+      </Button>
+      <Button
+        className="bg-blue-500 hover:bg-blue-600 text-white"
+        onClick={() => navigate('/auth?signup=true')}
+      >
+        Sign Up
+      </Button>
+            </>
             )}
           </div>
 
@@ -270,16 +280,21 @@ const NavBar = memo(() => {
                 <div className="flex items-center">
                   <UserMenu email={user.email || ''} />
                 </div>
-              ) : (
+              ) : location.pathname==='/auth' ?<></>:(<>
                 <Button
-                  className="bg-blue-500 hover:bg-blue-600 text-white w-full"
-                  onClick={() => {
-                    navigate('/auth');
-                    dispatch({ type: 'CLOSE_ALL' });
-                  }}
-                >
-                  Login
-                </Button>
+          variant="outline"
+          className="bg-white hover:bg-gray-100 text-blue-500 border-blue-500"
+          onClick={() => navigate('/auth')}
+        >
+          Login
+        </Button>
+        <Button
+          className="bg-blue-500 hover:bg-blue-600 text-white"
+          onClick={() => navigate('/auth?signup=true')}
+        >
+          Sign Up
+        </Button>
+              </>
               )}
             </div>
           </div>

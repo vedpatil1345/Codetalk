@@ -34,7 +34,7 @@ const SOCIAL_LINKS = [
 const Footer = () => {
   const location=useLocation();
   return (
-    <footer className={`${!location.pathname.startsWith('/playground/')?'block':'hidden'} bg-slate-950 text-gray-300 py-16 `}>
+    <footer className={`${!location.pathname.startsWith('/playground/') && location.pathname!="/auth"?'block':'hidden'} bg-slate-950 text-gray-300 py-16 `}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
