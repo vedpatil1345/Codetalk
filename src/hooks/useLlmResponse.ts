@@ -20,7 +20,7 @@ export const useLlmResponse = (query: string) => {
         }
 
         const llm = new ChatGroq({
-          modelName: 'llama-3.3-70b-versatile',
+          modelName: 'deepseek-r1-distill-llama-70b',
           apiKey: import.meta.env.VITE_GROQ_API_KEY,
           temperature: 0.7,
         });
