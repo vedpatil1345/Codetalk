@@ -32,28 +32,40 @@ const SOCIAL_LINKS = [
 
 // Footer component
 const Footer = () => {
-  const location=useLocation();
+  const location = useLocation();
+  
   return (
-    <footer className={`${!location.pathname.startsWith('/playground/') && location.pathname!="/auth"?'block':'hidden'} bg-slate-950 text-gray-300 py-16 `}>
+    <footer className={`
+      ${!location.pathname.startsWith('/playground/') && location.pathname!="/auth" ? 'block' : 'hidden'} 
+      bg-gray-100 dark:bg-slate-950 
+      text-gray-700 dark:text-gray-300 
+      py-16 transition-colors duration-300
+    `}>
       <div className="container mx-auto px-4">
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
           {/* Brand Section */}
           <div className="col-span-1">
-            <h2 className="text-2xl font-bold text-white mb-2">CodeTalk.</h2>
-            <p className="text-gray-400">
+            <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
+              CodeTalk.
+            </h2>
+            <p className="text-gray-600 dark:text-gray-400">
               The Online Code Analysis And Debugging Platform Analyze, debug, and optimize your code with AI assistance
             </p>
-          </div><div className="col-span-1"></div>
+          </div>
+          
+          <div className="col-span-1"></div>
 
           {/* Pages Section */}
           <div className="col-span-1">
-            <h3 className="text-lg font-semibold text-white mb-4">Pages</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+              Pages
+            </h3>
             <ul className="space-y-2">
               {NAVIGATION_LINKS.map(({ to, label }) => (
                 <li key={to}>
                   <Link 
                     to={to} 
-                    className="hover:text-blue-400 transition-colors duration-200"
+                    className="hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   >
                     {label}
                   </Link>
@@ -62,10 +74,11 @@ const Footer = () => {
             </ul>
           </div>
           
-
           {/* Social Section */}
           <div className="col-span-1">
-            <h3 className="text-lg font-semibold text-white mb-4">Social</h3>
+            <h3 className="text-lg font-semibold text-gray-900 dark:text-white mb-4">
+              Social
+            </h3>
             <ul className="space-y-2">
               {SOCIAL_LINKS.map(({ href, label, icon }) => (
                 <li key={href}>
@@ -73,7 +86,7 @@ const Footer = () => {
                     href={href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-2 hover:text-blue-400 transition-colors duration-200"
+                    className="flex items-center gap-2 hover:text-blue-600 dark:hover:text-blue-400 transition-colors duration-200"
                   >
                     {icon}
                     {label}
@@ -87,7 +100,6 @@ const Footer = () => {
     </footer>
   );
 };
-
 export const Layout = () => {
   return (
     <ThemeProvider storageKey="vite-ui-theme">

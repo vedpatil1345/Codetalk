@@ -108,7 +108,7 @@ export const Image2CodePage = () => {
           Image to Code Converter
         </h1>
 
-        <div className="grid grid-cols-1 lg:grid-cols-[1fr_1.5fr] gap-4 lg:gap-8">
+        <div className="relative max-w-[85vw] grid grid-cols-1 lg:grid-cols-[40%_60%] gap-4 lg:gap-8">
           {/* Configuration Section */}
           <div className="space-y-6 bg-slate-200/50 dark:bg-slate-900/50 p-4 rounded-lg border-2 border-slate-900/30 dark:border-slate-300/30 shadow-md">
             <div>
@@ -158,7 +158,7 @@ export const Image2CodePage = () => {
                     <img
                       src={URL.createObjectURL(selectedImage)}
                       alt="Selected"
-                      className="max-w-full h-48 object-contain rounded-lg shadow-lg"
+                      className="max-w-full h-32 object-contain rounded-lg shadow-lg"
                     />
                     <p className="text-sm opacity-70">{selectedImage.name}</p>
                   </div>

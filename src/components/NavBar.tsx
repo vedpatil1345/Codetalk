@@ -215,43 +215,9 @@ const NavBar = memo(() => {
                 Home
               </NavLink>
               {user && (
-                <div className="relative">
-                  <button
-                    onClick={() =>
-                      dispatch({ type: 'TOGGLE_CODE_ROOM' })
-                    }
-                    className="flex items-center space-x-1 cursor-pointer dark:hover:text-white transition-colors"
-                    aria-expanded={state.isCodeRoomOpen}
-                    aria-controls="mobileCodeRoomDropdown"
-                  >
-                    <span>CodeRoom</span>{state.isCodeRoomOpen?<ChevronUp size={16}/>:<ChevronDown size={16} />}
-                    
-                  </button>
-                  {state.isCodeRoomOpen && (
-                    <div
-                      id="mobileCodeRoomDropdown"
-                      className="absolute left-0 mt-2 w-48 bg-white dark:bg-slate-900 rounded-md shadow-lg py-1 z-50"
-                    >
-                      {codeRoomTabs.map((tab) => (
-                        <a
-                          key={tab.path}
-                          onClick={() => {
-                            navigate(tab.path);
-                            dispatch({ type: 'CLOSE_ALL' });
-                          }}
-                          className={classNames('block px-4 py-2 text-sm cursor-pointer', {
-                            'bg-gray-100 dark:bg-slate-800 dark:text-white':
-                              location.pathname === tab.path,
-                            'dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-slate-800 dark:hover:text-white':
-                              location.pathname !== tab.path,
-                          })}
-                        >
-                          {tab.label}
-                        </a>
-                      ))}
-                    </div>
-                  )}
-                </div>
+                <NavLink to="/playground">
+                  CodeRoom
+                </NavLink>
               )}
               
               <NavLink
