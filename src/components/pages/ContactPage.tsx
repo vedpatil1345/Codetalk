@@ -42,7 +42,7 @@ const ContactPage: React.FC = () => {
         'SERVICE_KEY',
         'TEMPLATE_ID',
         templateParams,
-        'PRIVATE_KEY'
+        'PUBLIC_KEY'
       );
 
       setShowSuccess(true);
