@@ -39,10 +39,10 @@ const ContactPage: React.FC = () => {
       };
 
       await emailjs.send(
-        'service_cgm8gjb',
-        'template_pupr2dy',
+        'SERVICE_KEY',
+        'TEMPLATE_ID',
         templateParams,
-        'k4AgOiH_khBqSvIJL'
+        'PRIVATE_KEY'
       );
 
       setShowSuccess(true);
