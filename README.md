@@ -279,9 +279,4 @@ Ved Patil
 - Email: vedpatil13042005@gmail.com
 - LinkedIn: [Ved Patil](https://www.linkedin.com/in/ved-patila71968250)
 
-### Frontend By
-
-Kunj Aghera
-
-@Kunj029
 
